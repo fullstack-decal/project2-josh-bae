@@ -40,7 +40,7 @@ Hint: We need:
       /*   FUNC DESCRIPTION: If user input is a number, create the function. */
       function makesNumber(value) {
           if (strbuffer === "0") {
-            if (equalsLastOp) {
+            if (equalsLastOp && value != 0) {
                 makesSymbol("C");
                 strbuffer = "";
                 equalsLastOp = false;
@@ -51,7 +51,7 @@ Hint: We need:
           /*  If strbuffer is not 0, meaning there is a previous number typed in already, what should we display on the screen?
           Hint: How do we concatenate strings? If you are stuck, imagine typing in a "5" into the calculator, making strbuffer into "5". 
           Then imagine typing "3" into the calculator. Now "3" is value and strbuffer is still at "5", so strbuffer will now be 53.  */
-                if (equalsLastOp) {
+                if (equalsLastOp && value != "0") {
                     makesSymbol("C");
                     strbuffer = "";
                     equalsLastOp = false;
@@ -93,6 +93,10 @@ Hint: We need:
           const intBuffer = parseInt(strbuffer);
           if (total === 0) {
               total = intBuffer;
+              if (strbuffer.length == 0) {
+                total = 0;
+            }
+              
           } else if (operator.length > 0) {
               calculations();
               strbuffer = total.toString();
