@@ -91,16 +91,21 @@ Hint: We need:
           }
           else { //make functionality if symbol is an operator
           const intBuffer = parseInt(strbuffer);
-          if (total === 0) {
-              total = intBuffer;
+          if (total === 0 && operator != 'x' && operator != "÷" ) {
+             
+             total = intBuffer;
+             
               if (strbuffer.length == 0) {
+                  
                 total = 0;
             }
+        
               
-          } else if (operator.length > 0) {
+          } else  {
               calculations();
               strbuffer = total.toString();
               screen.innerText = strbuffer;
+              
               
           }
           operator = symbol;
