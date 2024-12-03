@@ -34,7 +34,7 @@
 
 .calc-rows {
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap:wrap-reverse;
   height: 85%;
 }
 #last-buttons {
